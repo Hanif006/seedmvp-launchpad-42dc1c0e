@@ -54,13 +54,13 @@ const Contact = () => {
           content="Get in touch with SeedMVP for your MVP development needs. We're here to help you bring your startup idea to life."
         />
       </Helmet>
-      <div className="pt-24">
+      <div className="pt-24 min-h-screen grid-bg">
         {/* Hero Section */}
-        <div className="bg-seedmvp-blue text-white py-16">
+        <div className="bg-blue-600 text-white py-16">
           <div className="container-tight">
             <div className="text-center">
               <h1 className="text-3xl md:text-5xl font-bold mb-6">Contact Us</h1>
-              <p className="text-lg md:text-xl max-w-2xl mx-auto text-white/80">
+              <p className="text-lg md:text-xl max-w-2xl mx-auto text-white/90">
                 Have questions or ready to discuss your project? 
                 We're here to help you bring your idea to life.
               </p>
@@ -69,13 +69,13 @@ const Contact = () => {
         </div>
 
         {/* Contact Section */}
-        <section className="section">
+        <section className="section bg-background">
           <div className="container-tight">
             <div className="grid md:grid-cols-3 gap-8">
               <div className="md:col-span-1 space-y-8">
                 <div>
-                  <h2 className="text-2xl font-bold mb-6">Get In Touch</h2>
-                  <p className="text-gray-600 mb-8">
+                  <h2 className="text-2xl font-bold mb-6 text-foreground">Get In Touch</h2>
+                  <p className="text-muted-foreground mb-8">
                     Have a question or want to discuss your project? 
                     Fill out the form or contact us directly through any of these channels.
                   </p>
@@ -83,12 +83,12 @@ const Contact = () => {
 
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="bg-seedmvp-blue/10 p-3 rounded-lg mr-4">
-                      <MapPin className="h-6 w-6 text-seedmvp-blue" />
+                    <div className="bg-blue-600/10 p-3 rounded-lg mr-4">
+                      <MapPin className="h-6 w-6 text-blue-500" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Our Location</h3>
-                      <p className="text-gray-600">
+                      <h3 className="font-semibold mb-1 text-foreground">Our Location</h3>
+                      <p className="text-muted-foreground">
                         123 Startup Street, Tech Valley<br />
                         San Francisco, CA 90210
                       </p>
@@ -96,14 +96,14 @@ const Contact = () => {
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="bg-seedmvp-blue/10 p-3 rounded-lg mr-4">
-                      <Mail className="h-6 w-6 text-seedmvp-blue" />
+                    <div className="bg-blue-600/10 p-3 rounded-lg mr-4">
+                      <Mail className="h-6 w-6 text-blue-500" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Email Us</h3>
+                      <h3 className="font-semibold mb-1 text-foreground">Email Us</h3>
                       <a 
                         href="mailto:info@seedmvp.com" 
-                        className="text-seedmvp-blue hover:text-seedmvp-blue-dark transition-colors"
+                        className="text-blue-500 hover:text-blue-400 transition-colors"
                       >
                         info@seedmvp.com
                       </a>
@@ -111,14 +111,14 @@ const Contact = () => {
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="bg-seedmvp-blue/10 p-3 rounded-lg mr-4">
-                      <Phone className="h-6 w-6 text-seedmvp-blue" />
+                    <div className="bg-blue-600/10 p-3 rounded-lg mr-4">
+                      <Phone className="h-6 w-6 text-blue-500" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Call Us</h3>
+                      <h3 className="font-semibold mb-1 text-foreground">Call Us</h3>
                       <a 
                         href="tel:+1234567890" 
-                        className="text-seedmvp-blue hover:text-seedmvp-blue-dark transition-colors"
+                        className="text-blue-500 hover:text-blue-400 transition-colors"
                       >
                         (123) 456-7890
                       </a>
@@ -128,12 +128,12 @@ const Contact = () => {
               </div>
 
               <div className="md:col-span-2">
-                <div className="bg-white p-8 rounded-xl shadow-md">
-                  <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+                <div className="glass-card p-8 rounded-xl">
+                  <h2 className="text-2xl font-bold mb-6 text-foreground">Send Us a Message</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <label htmlFor="name" className="text-sm font-medium">
+                        <label htmlFor="name" className="text-sm font-medium text-foreground">
                           Your Name
                         </label>
                         <Input
@@ -143,10 +143,11 @@ const Contact = () => {
                           onChange={handleChange}
                           placeholder="John Doe"
                           required
+                          className="bg-background/50 border-white/10 text-foreground"
                         />
                       </div>
                       <div className="space-y-2">
-                        <label htmlFor="email" className="text-sm font-medium">
+                        <label htmlFor="email" className="text-sm font-medium text-foreground">
                           Your Email
                         </label>
                         <Input
@@ -157,11 +158,12 @@ const Contact = () => {
                           onChange={handleChange}
                           placeholder="john@example.com"
                           required
+                          className="bg-background/50 border-white/10 text-foreground"
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="subject" className="text-sm font-medium">
+                      <label htmlFor="subject" className="text-sm font-medium text-foreground">
                         Subject
                       </label>
                       <Input
@@ -171,10 +173,11 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="How can we help you?"
                         required
+                        className="bg-background/50 border-white/10 text-foreground"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium">
+                      <label htmlFor="message" className="text-sm font-medium text-foreground">
                         Message
                       </label>
                       <Textarea
@@ -185,11 +188,12 @@ const Contact = () => {
                         placeholder="Tell us about your project or question..."
                         rows={6}
                         required
+                        className="bg-background/50 border-white/10 text-foreground"
                       />
                     </div>
                     <Button 
                       type="submit" 
-                      className="w-full sm:w-auto" 
+                      className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white" 
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
@@ -208,12 +212,12 @@ const Contact = () => {
         </section>
 
         {/* Map Section */}
-        <section className="py-12">
+        <section className="py-12 bg-background">
           <div className="container-tight">
-            <div className="bg-seedmvp-gray-light h-96 rounded-xl overflow-hidden">
+            <div className="glass-card h-96 rounded-xl overflow-hidden">
               {/* This would be replaced with an actual map component in production */}
-              <div className="h-full w-full flex items-center justify-center bg-seedmvp-gray-light">
-                <MapPin className="h-12 w-12 text-seedmvp-blue opacity-30" />
+              <div className="h-full w-full flex items-center justify-center">
+                <MapPin className="h-12 w-12 text-blue-500 opacity-30" />
               </div>
             </div>
           </div>

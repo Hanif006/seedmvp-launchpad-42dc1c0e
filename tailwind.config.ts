@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -67,19 +66,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// SeedMVP custom colors
+				// SeedMVP custom colors - updated to greener palette
 				seedmvp: {
-					blue: {
-						light: '#60A5FA',
-						DEFAULT: '#3B82F6',
-						dark: '#1E40AF',
+					green: {
+						light: '#6EE7B7',
+						DEFAULT: '#10B981',
+						dark: '#047857',
 					},
 					gray: {
 						light: '#F9FAFB',
 						DEFAULT: '#F3F4F6',
 						dark: '#4B5563',
 					},
-					accent: '#A855F7',
+					accent: '#4ADE80',
 				},
 			},
 			borderRadius: {

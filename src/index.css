@@ -14,16 +14,16 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 262 80% 65%;
+    --primary: 142 70% 40%;
     --primary-foreground: 240 5.9% 10%;
 
-    --secondary: 217 91.2% 59.8%;
+    --secondary: 138 76% 58%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
 
-    --accent: 240 3.7% 15.9%;
+    --accent: 142 70% 45%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -52,7 +52,7 @@
 
   /* Custom utility classes */
   .hero-gradient {
-    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    background: linear-gradient(135deg, #10B981 0%, #4ADE80 100%);
   }
 
   .dark-gradient {
@@ -60,7 +60,7 @@
   }
 
   .purple-gradient {
-    background: linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%);
+    background: linear-gradient(90deg, #4ADE80 0%, #10B981 100%);
   }
 
   .text-gradient {

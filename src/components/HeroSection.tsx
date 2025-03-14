@@ -79,7 +79,7 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Abstract shapes for visual interest */}
+      {/* Abstract shapes for visual interest - changed to green tones */}
       <div className="absolute top-20 right-0 w-64 h-64 bg-primary opacity-10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-0 w-96 h-96 bg-secondary opacity-10 rounded-full blur-3xl"></div>
     </div>

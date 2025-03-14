@@ -20,7 +20,9 @@ const Home = () => {
       <div className="grid-bg min-h-screen bg-background">
         <HeroSection />
         <ServicesSection />
-        <PortfolioSection />
+        <div id="our-work" className="scroll-mt-20">
+          <PortfolioSection />
+        </div>
         <TestimonialsSection />
         <PricingSection />
         <CTASection />

@@ -71,16 +71,18 @@ const portfolioProjects = [
     image: "https://placehold.co/600x400/4ADE80/FFFFFF/png?text=SocialDash",
     tags: ["React", "GraphQL", "AWS"],
     link: "#",
-    details: "Designed an intuitive social media management dashboard that provides real-time analytics, scheduled posting, and engagement tracking across multiple platforms."
+    details: "Designed an intuitive social media dashboard that provides real-time analytics, scheduled posting, and engagement tracking across multiple platforms."
   },
 ];
 
 const PortfolioSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
+  // Auto-scrolling functionality
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -92,6 +94,13 @@ const PortfolioSection = () => {
     // Add event listener
     window.addEventListener('resize', handleResize);
     
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // Animation and intersection observers
+  useEffect(() => {
     const observerOptions = {
       root: null,
       rootMargin: '0px',
@@ -129,7 +138,6 @@ const PortfolioSection = () => {
     }
 
     return () => {
-      window.removeEventListener('resize', handleResize);
       titleObserver.disconnect();
       sectionObserver.disconnect();
     };
@@ -148,18 +156,28 @@ const PortfolioSection = () => {
           </p>
         </div>
 
-        {/* Desktop View with Carousel */}
+        {/* Desktop View with Continuous Sliding Carousel */}
         <div className="hidden md:block">
           <Carousel
             opts={{
               align: "start",
               loop: true,
+              dragFree: true,
             }}
             className="w-full"
+            ref={carouselRef}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {portfolioProjects.map((project) => (
-                <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 transition-all duration-300">
+            <CarouselContent 
+              className="animate-infinite-scroll"
+              style={{ 
+                animationPlayState: isPaused ? 'paused' : 'running',
+                width: `calc(${portfolioProjects.length * 33.333}% + ${portfolioProjects.length * 16}px)`
+              }}
+            >
+              {portfolioProjects.concat(portfolioProjects).map((project, index) => (
+                <CarouselItem key={`${project.id}-${index}`} className="pl-4 md:basis-1/3 lg:basis-1/3 transition-all duration-300">
                   <HoverCard>
                     <HoverCardTrigger asChild>
                       <Card className="glass-card rounded-lg overflow-hidden h-full transition-all duration-500 hover:shadow-lg hover:shadow-primary/20 hover:scale-105">
@@ -202,46 +220,45 @@ const PortfolioSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="flex items-center justify-center mt-8 gap-4">
-              <CarouselPrevious className="relative inset-0 translate-y-0 left-0 h-10 w-10 rounded-full bg-background border border-primary/20 hover:bg-primary hover:text-primary-foreground" />
-              <CarouselNext className="relative inset-0 translate-y-0 right-0 h-10 w-10 rounded-full bg-background border border-primary/20 hover:bg-primary hover:text-primary-foreground" />
-            </div>
           </Carousel>
         </div>
 
         {/* Mobile View with Stacked Cards */}
         <div className="block md:hidden space-y-6">
-          {portfolioProjects.slice(0, 4).map((project, index) => (
-            <div
-              key={project.id}
-              className="glass-card rounded-lg overflow-hidden transition-all duration-500 opacity-0 animate-fade-in"
-              style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'forwards' }}
-            >
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2 text-foreground">{project.title}</h3>
-                <p className="text-muted-foreground mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
-                      {tag}
-                    </span>
-                  ))}
+          <div className="overflow-x-hidden">
+            <div className="animate-infinite-scroll-mobile flex gap-6">
+              {portfolioProjects.concat(portfolioProjects).map((project, index) => (
+                <div
+                  key={`${project.id}-${index}`}
+                  className="glass-card rounded-lg overflow-hidden min-w-[300px] max-w-[300px] flex-shrink-0"
+                >
+                  <div className="h-48 overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-xl font-semibold mb-2 text-foreground">{project.title}</h3>
+                    <p className="text-muted-foreground mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tags.map(tag => (
+                        <span key={tag} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <Button variant="ghost" asChild className="flex items-center gap-2 text-primary hover:bg-primary/10">
+                      <Link to={project.link}>
+                        View Project <ExternalLink className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
-                <Button variant="ghost" asChild className="flex items-center gap-2 text-primary hover:bg-primary/10">
-                  <Link to={project.link}>
-                    View Project <ExternalLink className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
         <div className="mt-12 text-center opacity-0 animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>

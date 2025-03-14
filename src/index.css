@@ -125,6 +125,17 @@
   }
 }
 
+/* Infinite scroll animations */
+@keyframes infinite-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes infinite-scroll-mobile {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
 /* Animation classes */
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
@@ -142,6 +153,14 @@
   animation: slide-in-left 0.5s ease-out forwards;
 }
 
+.animate-infinite-scroll {
+  animation: infinite-scroll 40s linear infinite;
+}
+
+.animate-infinite-scroll-mobile {
+  animation: infinite-scroll-mobile 30s linear infinite;
+}
+
 #root {
   max-width: 100%;
   margin: 0 auto;
@@ -155,4 +174,3 @@
     linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
-

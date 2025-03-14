@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
@@ -16,35 +16,50 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const queryClient = new QueryClient();
 
+// Check if we're in production mode (for GitHub Pages deployment)
+const isGitHubPages = import.meta.env.MODE === 'production';
+
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <Helmet>
-            <title>SeedMVP - Transform Your Idea Into Reality</title>
-            <meta name="description" content="Fast-track your startup with SeedMVP. We build MVPs that validate your business and attract investors." />
-          </Helmet>
-          <div className="flex flex-col min-h-screen">
-            <Navbar />
-            <main className="flex-grow">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/submit-idea" element={<SubmitIdea />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
-        </BrowserRouter>
+        {/* Use HashRouter for GitHub Pages, BrowserRouter for development */}
+        {isGitHubPages ? (
+          <HashRouter>
+            <AppContent />
+          </HashRouter>
+        ) : (
+          <BrowserRouter>
+            <AppContent />
+          </BrowserRouter>
+        )}
       </TooltipProvider>
     </QueryClientProvider>
   </HelmetProvider>
+);
+
+// Separate component for the app content to avoid duplication
+const AppContent = () => (
+  <div className="flex flex-col min-h-screen">
+    <Helmet>
+      <title>SeedMVP - Transform Your Idea Into Reality</title>
+      <meta name="description" content="Fast-track your startup with SeedMVP. We build MVPs that validate your business and attract investors." />
+    </Helmet>
+    <Navbar />
+    <main className="flex-grow">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/submit-idea" element={<SubmitIdea />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </main>
+    <Footer />
+  </div>
 );
 
 export default App;

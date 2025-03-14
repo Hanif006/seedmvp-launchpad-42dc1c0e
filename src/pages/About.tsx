@@ -13,55 +13,28 @@ import { Helmet } from "react-helmet";
 const values = [
   {
     title: "Speed",
-    description: "We believe in moving fast and helping our clients get to market quickly to test and refine their ideas.",
+    description: "I believe in moving fast and helping my clients get to market quickly to test and refine their ideas.",
     icon: Rocket,
   },
   {
     title: "Collaboration",
-    description: "We work closely with founders, treating their vision with the same care and dedication as our own projects.",
+    description: "I work closely with founders, treating their vision with the same care and dedication as my own projects.",
     icon: Users,
   },
   {
     title: "Quality",
-    description: "While we work quickly, we never compromise on delivering high-quality, reliable, and scalable solutions.",
+    description: "While I work quickly, I never compromise on delivering high-quality, reliable, and scalable solutions.",
     icon: Shield,
   },
   {
     title: "Passion",
-    description: "We're genuinely excited about each project and committed to helping founders succeed in their startup journey.",
+    description: "I'm genuinely excited about each project and committed to helping founders succeed in their startup journey.",
     icon: Heart,
   },
   {
     title: "Results-Oriented",
-    description: "We focus on outcomes, not just outputs, ensuring that our work drives real business value for our clients.",
+    description: "I focus on outcomes, not just outputs, ensuring that my work drives real business value for my clients.",
     icon: Target,
-  },
-];
-
-const team = [
-  {
-    name: "Alex Johnson",
-    role: "Founder & CEO",
-    bio: "Serial entrepreneur with 15+ years of experience in product development and startup ecosystems.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    name: "Samantha Chen",
-    role: "Chief Technology Officer",
-    bio: "Former senior developer at Google with expertise in scalable architecture and emerging technologies.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-  {
-    name: "David Rodriguez",
-    role: "Design Director",
-    bio: "Award-winning UX/UI designer passionate about creating intuitive, user-centered digital experiences.",
-    image: "https://randomuser.me/api/portraits/men/67.jpg",
-  },
-  {
-    name: "Priya Patel",
-    role: "Product Strategy Lead",
-    bio: "Product strategist with experience helping 50+ startups refine their MVPs and go-to-market strategies.",
-    image: "https://randomuser.me/api/portraits/women/63.jpg",
   },
 ];
 
@@ -72,55 +45,59 @@ const About = () => {
         <title>About - SeedMVP</title>
         <meta
           name="description"
-          content="Learn about SeedMVP, our mission, values, and the team behind our MVP development agency."
+          content="Learn about Hanif Anuar, his mission, values, and experience in MVP development."
         />
       </Helmet>
       <div className="pt-24">
         {/* Hero Section */}
-        <div className="bg-seedmvp-blue text-white py-16">
+        <div className="bg-background text-white py-16">
           <div className="container-tight">
             <div className="text-center">
-              <h1 className="text-3xl md:text-5xl font-bold mb-6">About SeedMVP</h1>
+              <h1 className="text-3xl md:text-5xl font-bold mb-6">About Me</h1>
               <p className="text-lg md:text-xl max-w-2xl mx-auto text-white/80">
-                We're a team of passionate builders, designers, and strategists 
+                I'm a passionate builder, designer, and strategist 
                 helping startups bring their ideas to life.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Our Story */}
-        <section className="section">
+        {/* My Story */}
+        <section className="section bg-background">
           <div className="container-tight">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6">Our Story</h2>
-                <div className="space-y-4 text-lg">
+                <h2 className="text-3xl font-bold mb-6 text-foreground">My Story</h2>
+                <div className="space-y-4 text-lg text-muted-foreground">
                   <p>
-                    SeedMVP was born from a simple observation: too many great startup ideas never make it to market because of technical barriers and development costs.
+                    Hi, I'm Hanif Anuar, a 16-year-old developer from Denmark. Despite my young age, I've developed a strong passion for creating digital solutions that solve real problems.
                   </p>
                   <p>
-                    Founded in 2018, we set out to change that by creating a studio specifically designed to help founders quickly transform their concepts into functional MVPs that can validate business models and attract investment.
+                    SeedMVP started as my personal mission to help entrepreneurs and startups turn their ideas into reality without the usual technical barriers and high development costs.
                   </p>
                   <p>
-                    Since then, we've worked with over 100 startups across various industries, helping them launch, iterate, and grow. Our team brings together expertise in development, design, and product strategy to deliver solutions that work for early-stage companies.
+                    As a solo developer, I offer personalized attention to every project I take on. My approach combines technical expertise with strategic thinking to create MVPs that not only work well but also help validate business models and attract investment.
                   </p>
                 </div>
               </div>
-              <div className="bg-seedmvp-gray-light rounded-xl p-8">
-                <div className="aspect-video bg-white rounded-lg shadow-md"></div>
+              <div>
+                <img 
+                  src="/lovable-uploads/ac0521fd-f6c5-464e-95af-e684d1fcd5cf.png" 
+                  alt="Hanif Anuar" 
+                  className="rounded-xl shadow-lg w-full"
+                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Our Values */}
-        <section className="section bg-seedmvp-gray-light">
+        {/* My Values */}
+        <section className="section bg-muted">
           <div className="container-tight">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Our Values</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                The principles that guide our work and relationships with clients.
+              <h2 className="text-3xl font-bold mb-4 text-foreground">My Values</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                The principles that guide my work and relationships with clients.
               </p>
             </div>
 
@@ -128,64 +105,98 @@ const About = () => {
               {values.map((value, index) => (
                 <div 
                   key={index} 
-                  className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+                  className="glass-card rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
                 >
-                  <div className="w-12 h-12 bg-seedmvp-blue/10 rounded-lg flex items-center justify-center mb-4">
-                    <value.icon className="h-6 w-6 text-seedmvp-blue" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <value.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-                  <p className="text-gray-600">{value.description}</p>
+                  <h3 className="text-xl font-semibold mb-2 text-foreground">{value.title}</h3>
+                  <p className="text-muted-foreground">{value.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Our Team */}
-        <section className="section">
+        {/* My Experience */}
+        <section className="section bg-background">
           <div className="container-tight">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                The experts behind SeedMVP who will help bring your vision to life.
+              <h2 className="text-3xl font-bold mb-4 text-foreground">My Experience</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Despite my young age, I've developed skills and expertise in various areas of web and app development.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {team.map((member, index) => (
-                <div 
-                  key={index} 
-                  className="bg-white rounded-lg shadow-md overflow-hidden"
-                >
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full aspect-square object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                    <p className="text-seedmvp-blue font-medium mb-3">{member.role}</p>
-                    <p className="text-gray-600">{member.bio}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="glass-card p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-4 text-foreground">Technical Skills</h3>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>Front-end: React, Next.js, Vue.js</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>Back-end: Node.js, Express, Firebase</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>Mobile: React Native, Flutter</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>Database: MongoDB, MySQL, Firestore</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>UI/UX: Figma, Adobe XD</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="glass-card p-6 rounded-lg">
+                <h3 className="text-xl font-semibold mb-4 text-foreground">Project Experience</h3>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>E-commerce platforms for small businesses</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>Mobile apps for service-based startups</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>SaaS platforms with subscription models</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>Community platforms and marketplaces</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>AI-enhanced web applications</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="section bg-seedmvp-gray-light">
+        <section className="section bg-muted">
           <div className="container-tight">
-            <div className="bg-seedmvp-blue text-white rounded-xl p-8 md:p-12 text-center">
-              <h2 className="text-3xl font-bold mb-4">Ready to Work Together?</h2>
-              <p className="text-xl mb-8 max-w-2xl mx-auto text-white/80">
-                Let's bring your vision to life. Start by sharing your idea with us today.
+            <div className="glass-card p-8 md:p-12 text-center rounded-xl">
+              <h2 className="text-3xl font-bold mb-4 text-gradient">Ready to Work Together?</h2>
+              <p className="text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">
+                Let's bring your vision to life. Start by sharing your idea with me today.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button 
                   size="lg" 
-                  variant="secondary" 
-                  className="bg-white text-seedmvp-blue hover:bg-seedmvp-gray"
+                  variant="default"
+                  className="bg-primary/80 hover:bg-primary text-background"
                   asChild
                 >
                   <Link to="/submit-idea">Submit Your Idea</Link>
@@ -193,10 +204,10 @@ const About = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-white text-white hover:bg-white/10"
+                  className="border-primary/50 text-primary hover:bg-primary/10"
                   asChild
                 >
-                  <Link to="/contact">Contact Us</Link>
+                  <Link to="/contact">Contact Me</Link>
                 </Button>
               </div>
             </div>

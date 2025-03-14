@@ -34,7 +34,7 @@ const Contact = () => {
       setIsSubmitting(false);
       toast({
         title: "Message Sent!",
-        description: "Thank you for reaching out. We'll get back to you shortly.",
+        description: "Thank you for reaching out. I'll get back to you shortly.",
       });
       setFormData({
         name: "",
@@ -51,18 +51,18 @@ const Contact = () => {
         <title>Contact - SeedMVP</title>
         <meta
           name="description"
-          content="Get in touch with SeedMVP for your MVP development needs. We're here to help you bring your startup idea to life."
+          content="Get in touch with Hanif Anuar for your MVP development needs. I'm here to help you bring your startup idea to life."
         />
       </Helmet>
       <div className="pt-24 min-h-screen grid-bg">
         {/* Hero Section */}
-        <div className="bg-blue-600 text-white py-16">
+        <div className="bg-background text-white py-16">
           <div className="container-tight">
             <div className="text-center">
-              <h1 className="text-3xl md:text-5xl font-bold mb-6">Contact Us</h1>
+              <h1 className="text-3xl md:text-5xl font-bold mb-6">Contact Me</h1>
               <p className="text-lg md:text-xl max-w-2xl mx-auto text-white/90">
                 Have questions or ready to discuss your project? 
-                We're here to help you bring your idea to life.
+                I'm here to help you bring your idea to life.
               </p>
             </div>
           </div>
@@ -77,50 +77,49 @@ const Contact = () => {
                   <h2 className="text-2xl font-bold mb-6 text-foreground">Get In Touch</h2>
                   <p className="text-muted-foreground mb-8">
                     Have a question or want to discuss your project? 
-                    Fill out the form or contact us directly through any of these channels.
+                    Fill out the form or contact me directly through any of these channels.
                   </p>
                 </div>
 
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="bg-blue-600/10 p-3 rounded-lg mr-4">
-                      <MapPin className="h-6 w-6 text-blue-500" />
+                    <div className="bg-primary/10 p-3 rounded-lg mr-4">
+                      <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1 text-foreground">Our Location</h3>
+                      <h3 className="font-semibold mb-1 text-foreground">My Location</h3>
                       <p className="text-muted-foreground">
-                        123 Startup Street, Tech Valley<br />
-                        San Francisco, CA 90210
+                        Denmark
                       </p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="bg-blue-600/10 p-3 rounded-lg mr-4">
-                      <Mail className="h-6 w-6 text-blue-500" />
+                    <div className="bg-primary/10 p-3 rounded-lg mr-4">
+                      <Mail className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1 text-foreground">Email Us</h3>
+                      <h3 className="font-semibold mb-1 text-foreground">Email Me</h3>
                       <a 
-                        href="mailto:info@seedmvp.com" 
-                        className="text-blue-500 hover:text-blue-400 transition-colors"
+                        href="mailto:hanif@seedmvp.com" 
+                        className="text-primary hover:text-primary/80 transition-colors"
                       >
-                        info@seedmvp.com
+                        hanif@seedmvp.com
                       </a>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="bg-blue-600/10 p-3 rounded-lg mr-4">
-                      <Phone className="h-6 w-6 text-blue-500" />
+                    <div className="bg-primary/10 p-3 rounded-lg mr-4">
+                      <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1 text-foreground">Call Us</h3>
+                      <h3 className="font-semibold mb-1 text-foreground">Call Me</h3>
                       <a 
-                        href="tel:+1234567890" 
-                        className="text-blue-500 hover:text-blue-400 transition-colors"
+                        href="tel:+4512345678" 
+                        className="text-primary hover:text-primary/80 transition-colors"
                       >
-                        (123) 456-7890
+                        +45 12 345 678
                       </a>
                     </div>
                   </div>
@@ -129,7 +128,7 @@ const Contact = () => {
 
               <div className="md:col-span-2">
                 <div className="glass-card p-8 rounded-xl">
-                  <h2 className="text-2xl font-bold mb-6 text-foreground">Send Us a Message</h2>
+                  <h2 className="text-2xl font-bold mb-6 text-foreground">Send Me a Message</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                       <div className="space-y-2">
@@ -171,7 +170,7 @@ const Contact = () => {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        placeholder="How can we help you?"
+                        placeholder="How can I help you?"
                         required
                         className="bg-background/50 border-white/10 text-foreground"
                       />
@@ -185,7 +184,7 @@ const Contact = () => {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Tell us about your project or question..."
+                        placeholder="Tell me about your project or question..."
                         rows={6}
                         required
                         className="bg-background/50 border-white/10 text-foreground"
@@ -193,7 +192,7 @@ const Contact = () => {
                     </div>
                     <Button 
                       type="submit" 
-                      className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white" 
+                      className="w-full sm:w-auto bg-primary/80 hover:bg-primary text-background" 
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
@@ -216,8 +215,8 @@ const Contact = () => {
           <div className="container-tight">
             <div className="glass-card h-96 rounded-xl overflow-hidden">
               {/* This would be replaced with an actual map component in production */}
-              <div className="h-full w-full flex items-center justify-center">
-                <MapPin className="h-12 w-12 text-blue-500 opacity-30" />
+              <div className="h-full w-full flex items-center justify-center bg-muted">
+                <MapPin className="h-12 w-12 text-primary opacity-30" />
               </div>
             </div>
           </div>

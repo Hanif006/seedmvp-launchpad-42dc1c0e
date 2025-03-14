@@ -74,25 +74,54 @@ const SubmitIdea = () => {
         <title>Submit Your Idea - SeedMVP</title>
         <meta
           name="description"
-          content="Share your startup idea with SeedMVP and take the first step toward building your MVP."
+          content="Share your startup idea with Hanif Anuar and take the first step toward building your MVP."
         />
       </Helmet>
       <div className="pt-24">
         {/* Hero Section */}
-        <div className="bg-seedmvp-blue dark-gradient text-white py-16">
+        <div className="bg-background text-white py-16">
           <div className="container-tight">
             <div className="text-center">
               <h1 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">Submit Your Idea</h1>
               <p className="text-lg md:text-xl max-w-2xl mx-auto text-white/80">
-                Share your vision with us and take the first step toward bringing it to life.
-                We're excited to hear about your project!
+                Share your vision with me and take the first step toward bringing it to life.
+                I'm excited to hear about your project!
               </p>
             </div>
           </div>
         </div>
 
+        {/* About Developer Section */}
+        <section className="section bg-background">
+          <div className="container-tight">
+            <div className="glass-card p-8 rounded-xl">
+              <div className="flex flex-col md:flex-row gap-8 items-center text-left">
+                <div className="md:w-1/3">
+                  <img 
+                    src="/lovable-uploads/ac0521fd-f6c5-464e-95af-e684d1fcd5cf.png" 
+                    alt="Hanif Anuar" 
+                    className="rounded-xl w-full max-w-xs mx-auto"
+                  />
+                </div>
+                <div className="md:w-2/3">
+                  <h2 className="text-2xl font-bold mb-4 text-gradient">Meet The Developer</h2>
+                  <p className="text-white/90 text-lg mb-4">
+                    Hi, I'm <span className="font-bold text-primary">Hanif Anuar</span>, a 16-year-old developer from Denmark with a passion for building innovative digital solutions.
+                  </p>
+                  <p className="text-white/80 mb-4">
+                    Despite my young age, I bring a wealth of experience in web and mobile development, having worked on numerous projects that prioritize clean code, user experience, and business goals.
+                  </p>
+                  <p className="text-white/80">
+                    As a one-man team, I offer personalized attention to every project. I believe in transparent communication, rapid development, and delivering quality results that exceed expectations.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Form Section */}
-        <section className="section">
+        <section className="section bg-background">
           <div className="container-tight">
             {isSubmitted ? (
               <div className="glass-card p-12 rounded-xl shadow-md text-center max-w-2xl mx-auto">
@@ -101,20 +130,20 @@ const SubmitIdea = () => {
                 </div>
                 <h2 className="text-2xl font-bold mb-4 text-gradient">Thank You!</h2>
                 <p className="text-lg text-white/80 mb-6">
-                  We've received your project idea and we're excited to review it!
-                  Our team will get back to you within 1-2 business days to discuss
+                  I've received your project idea and I'm excited to review it!
+                  I'll get back to you within 1-2 business days to discuss
                   the next steps.
                 </p>
-                <p className="text-seedmvp-blue-light font-medium mb-8">
+                <p className="text-blue-400 font-medium mb-8">
                   A confirmation email has been sent to {formData.email}
                 </p>
-                <Button asChild variant="secondary">
+                <Button asChild variant="secondary" className="bg-primary/20 hover:bg-primary/30 text-white">
                   <a href="/">Return to Home Page</a>
                 </Button>
               </div>
             ) : (
               <div className="glass-card p-8 rounded-xl shadow-md max-w-3xl mx-auto">
-                <h2 className="text-2xl font-bold mb-6 text-gradient">Tell Us About Your Project</h2>
+                <h2 className="text-2xl font-bold mb-6 text-gradient">Tell Me About Your Project</h2>
                 <form onSubmit={handleSubmit} className="space-y-8">
                   {/* Personal Information */}
                   <div>
@@ -194,7 +223,7 @@ const SubmitIdea = () => {
                         >
                           {mvpTypes.map((type) => (
                             <div key={type.id} className="flex items-center space-x-2">
-                              <RadioGroupItem value={type.id} id={`mvp-type-${type.id}`} className="border-seedmvp-blue-light text-seedmvp-blue-light" />
+                              <RadioGroupItem value={type.id} id={`mvp-type-${type.id}`} className="border-blue-400 text-blue-400" />
                               <Label htmlFor={`mvp-type-${type.id}`} className="cursor-pointer text-white/80">
                                 {type.label}
                               </Label>
@@ -213,7 +242,7 @@ const SubmitIdea = () => {
                         >
                           {budgetRanges.map((range) => (
                             <div key={range.id} className="flex items-center space-x-2">
-                              <RadioGroupItem value={range.id} id={`budget-${range.id}`} className="border-seedmvp-blue-light text-seedmvp-blue-light" />
+                              <RadioGroupItem value={range.id} id={`budget-${range.id}`} className="border-blue-400 text-blue-400" />
                               <Label htmlFor={`budget-${range.id}`} className="cursor-pointer text-white/80">
                                 {range.label}
                               </Label>
@@ -227,7 +256,7 @@ const SubmitIdea = () => {
                   <Button 
                     type="submit" 
                     size="lg"
-                    className="w-full sm:w-auto bg-seedmvp-blue hover:bg-seedmvp-blue-dark" 
+                    className="w-full sm:w-auto bg-primary/80 hover:bg-primary text-background" 
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (

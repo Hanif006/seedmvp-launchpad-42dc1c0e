@@ -3,21 +3,57 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { useEffect, useState } from "react";
 
 const HeroSection = () => {
+  const [text, setText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+  const fullText = "Stress-Free";
+  
+  useEffect(() => {
+    if (isTyping) {
+      if (text.length < fullText.length) {
+        const timeout = setTimeout(() => {
+          setText(fullText.slice(0, text.length + 1));
+        }, 150);
+        
+        return () => clearTimeout(timeout);
+      } else {
+        // When typing is complete, pause before erasing
+        const timeout = setTimeout(() => {
+          setIsTyping(false);
+        }, 2000);
+        
+        return () => clearTimeout(timeout);
+      }
+    } else {
+      if (text.length > 0) {
+        const timeout = setTimeout(() => {
+          setText(text.slice(0, text.length - 1));
+        }, 100);
+        
+        return () => clearTimeout(timeout);
+      } else {
+        // When erasing is complete, start typing again
+        const timeout = setTimeout(() => {
+          setIsTyping(true);
+        }, 500);
+        
+        return () => clearTimeout(timeout);
+      }
+    }
+  }, [text, isTyping]);
+  
   return (
     <div className="relative pt-20 overflow-hidden grid-bg min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
-        <Alert className="mx-auto mb-6 max-w-md bg-muted/40 border-muted">
-          <AlertDescription className="text-center text-sm">
-            Limited Availability: 4 spots for March
-          </AlertDescription>
-        </Alert>
-        
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight mb-6 tracking-tight">
             Build Your MVP, Fast, Affordable,
-            <br />and <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">Stress-Free</span>
+            <br />and <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
+              {text}
+              <span className="animate-pulse">|</span>
+            </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-400 mb-8">

@@ -13,6 +13,7 @@ import Contact from "@/pages/Contact";
 import SubmitIdea from "@/pages/SubmitIdea";
 import NotFound from "@/pages/NotFound";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import MouseFollower from "@/components/MouseFollower";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
               <title>SeedMVP - Transform Your Idea Into Reality</title>
               <meta name="description" content="Fast-track your startup with SeedMVP. We build MVPs that validate your business and attract investors." />
             </Helmet>
+            <MouseFollower />
             <Navbar />
             <main className="flex-grow">
               <Routes>

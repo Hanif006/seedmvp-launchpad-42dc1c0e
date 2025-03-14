@@ -4,13 +4,14 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// Get the repository name from the GitHub Pages URL or use an empty string for local development
+// Get the correct base URL for GitHub Pages deployment
 const getBase = () => {
-  // Use empty string for development or if no repo name is detected
-  if (process.env.NODE_ENV !== 'production') return '/';
-  
-  // For GitHub Pages deployment
-  return './';
+  // For GitHub Pages deployment with specific repo name
+  if (process.env.NODE_ENV === 'production') {
+    return '/seedmvp-launchpad-42dc1c0e/'; // Use the actual repository name here
+  }
+  // Default for development
+  return '/';
 };
 
 // https://vitejs.dev/config/

@@ -79,10 +79,10 @@ const SubmitIdea = () => {
       </Helmet>
       <div className="pt-24">
         {/* Hero Section */}
-        <div className="bg-seedmvp-blue text-white py-16">
+        <div className="bg-seedmvp-blue dark-gradient text-white py-16">
           <div className="container-tight">
             <div className="text-center">
-              <h1 className="text-3xl md:text-5xl font-bold mb-6">Submit Your Idea</h1>
+              <h1 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">Submit Your Idea</h1>
               <p className="text-lg md:text-xl max-w-2xl mx-auto text-white/80">
                 Share your vision with us and take the first step toward bringing it to life.
                 We're excited to hear about your project!
@@ -95,33 +95,33 @@ const SubmitIdea = () => {
         <section className="section">
           <div className="container-tight">
             {isSubmitted ? (
-              <div className="bg-white p-12 rounded-xl shadow-md text-center max-w-2xl mx-auto">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Check className="h-8 w-8 text-green-600" />
+              <div className="glass-card p-12 rounded-xl shadow-md text-center max-w-2xl mx-auto">
+                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Check className="h-8 w-8 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
-                <p className="text-lg text-gray-600 mb-6">
+                <h2 className="text-2xl font-bold mb-4 text-gradient">Thank You!</h2>
+                <p className="text-lg text-white/80 mb-6">
                   We've received your project idea and we're excited to review it!
                   Our team will get back to you within 1-2 business days to discuss
                   the next steps.
                 </p>
-                <p className="text-seedmvp-blue font-medium mb-8">
+                <p className="text-seedmvp-blue-light font-medium mb-8">
                   A confirmation email has been sent to {formData.email}
                 </p>
-                <Button asChild>
+                <Button asChild variant="secondary">
                   <a href="/">Return to Home Page</a>
                 </Button>
               </div>
             ) : (
-              <div className="bg-white p-8 rounded-xl shadow-md max-w-3xl mx-auto">
-                <h2 className="text-2xl font-bold mb-6">Tell Us About Your Project</h2>
+              <div className="glass-card p-8 rounded-xl shadow-md max-w-3xl mx-auto">
+                <h2 className="text-2xl font-bold mb-6 text-gradient">Tell Us About Your Project</h2>
                 <form onSubmit={handleSubmit} className="space-y-8">
                   {/* Personal Information */}
                   <div>
-                    <h3 className="text-xl font-semibold mb-4">Your Information</h3>
+                    <h3 className="text-xl font-semibold mb-4 text-white/90">Your Information</h3>
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                       <div className="space-y-2">
-                        <Label htmlFor="name">Full Name</Label>
+                        <Label htmlFor="name" className="text-white/80">Full Name</Label>
                         <Input
                           id="name"
                           name="name"
@@ -129,10 +129,11 @@ const SubmitIdea = () => {
                           onChange={handleChange}
                           placeholder="John Doe"
                           required
+                          className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email Address</Label>
+                        <Label htmlFor="email" className="text-white/80">Email Address</Label>
                         <Input
                           id="email"
                           name="email"
@@ -141,6 +142,7 @@ const SubmitIdea = () => {
                           onChange={handleChange}
                           placeholder="john@example.com"
                           required
+                          className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
                         />
                       </div>
                     </div>
@@ -148,10 +150,10 @@ const SubmitIdea = () => {
 
                   {/* Project Information */}
                   <div>
-                    <h3 className="text-xl font-semibold mb-4">Project Details</h3>
+                    <h3 className="text-xl font-semibold mb-4 text-white/90">Project Details</h3>
                     <div className="space-y-6">
                       <div className="space-y-2">
-                        <Label htmlFor="projectTitle">Project Title</Label>
+                        <Label htmlFor="projectTitle" className="text-white/80">Project Title</Label>
                         <Input
                           id="projectTitle"
                           name="projectTitle"
@@ -159,10 +161,11 @@ const SubmitIdea = () => {
                           onChange={handleChange}
                           placeholder="e.g., Fitness Tracking App"
                           required
+                          className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="projectDescription">Project Description</Label>
+                        <Label htmlFor="projectDescription" className="text-white/80">Project Description</Label>
                         <Textarea
                           id="projectDescription"
                           name="projectDescription"
@@ -171,6 +174,7 @@ const SubmitIdea = () => {
                           placeholder="Describe your idea, target users, key features, and any other relevant details..."
                           rows={6}
                           required
+                          className="bg-black/50 border-white/10 text-white placeholder:text-white/40"
                         />
                       </div>
                     </div>
@@ -178,10 +182,10 @@ const SubmitIdea = () => {
 
                   {/* Project Requirements */}
                   <div>
-                    <h3 className="text-xl font-semibold mb-4">Requirements</h3>
+                    <h3 className="text-xl font-semibold mb-4 text-white/90">Requirements</h3>
                     <div className="space-y-6">
                       <div className="space-y-3">
-                        <Label>What type of MVP do you need?</Label>
+                        <Label className="text-white/80">What type of MVP do you need?</Label>
                         <RadioGroup
                           value={formData.mvpType}
                           onValueChange={(value) => handleRadioChange("mvpType", value)}
@@ -190,8 +194,8 @@ const SubmitIdea = () => {
                         >
                           {mvpTypes.map((type) => (
                             <div key={type.id} className="flex items-center space-x-2">
-                              <RadioGroupItem value={type.id} id={`mvp-type-${type.id}`} />
-                              <Label htmlFor={`mvp-type-${type.id}`} className="cursor-pointer">
+                              <RadioGroupItem value={type.id} id={`mvp-type-${type.id}`} className="border-seedmvp-blue-light text-seedmvp-blue-light" />
+                              <Label htmlFor={`mvp-type-${type.id}`} className="cursor-pointer text-white/80">
                                 {type.label}
                               </Label>
                             </div>
@@ -200,7 +204,7 @@ const SubmitIdea = () => {
                       </div>
 
                       <div className="space-y-3">
-                        <Label>What's your budget range?</Label>
+                        <Label className="text-white/80">What's your budget range?</Label>
                         <RadioGroup
                           value={formData.budgetRange}
                           onValueChange={(value) => handleRadioChange("budgetRange", value)}
@@ -209,8 +213,8 @@ const SubmitIdea = () => {
                         >
                           {budgetRanges.map((range) => (
                             <div key={range.id} className="flex items-center space-x-2">
-                              <RadioGroupItem value={range.id} id={`budget-${range.id}`} />
-                              <Label htmlFor={`budget-${range.id}`} className="cursor-pointer">
+                              <RadioGroupItem value={range.id} id={`budget-${range.id}`} className="border-seedmvp-blue-light text-seedmvp-blue-light" />
+                              <Label htmlFor={`budget-${range.id}`} className="cursor-pointer text-white/80">
                                 {range.label}
                               </Label>
                             </div>
@@ -223,7 +227,7 @@ const SubmitIdea = () => {
                   <Button 
                     type="submit" 
                     size="lg"
-                    className="w-full sm:w-auto" 
+                    className="w-full sm:w-auto bg-seedmvp-blue hover:bg-seedmvp-blue-dark" 
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (

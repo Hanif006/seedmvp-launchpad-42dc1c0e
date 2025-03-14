@@ -2,6 +2,7 @@
 import { Helmet } from "react-helmet";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
+import PortfolioSection from "@/components/PortfolioSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PricingSection from "@/components/PricingSection";
 import CTASection from "@/components/CTASection";
@@ -19,6 +20,7 @@ const Home = () => {
       <div className="grid-bg min-h-screen bg-background">
         <HeroSection />
         <ServicesSection />
+        <PortfolioSection />
         <TestimonialsSection />
         <PricingSection />
         <CTASection />

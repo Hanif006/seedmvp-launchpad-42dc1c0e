@@ -5,54 +5,38 @@ import { Button } from "@/components/ui/button";
 
 const pricingTiers = [
   {
-    name: "Basic MVP",
-    price: "$5,000",
-    description: "Perfect for validating simple ideas quickly",
+    name: "MVP Project",
+    price: "$2,000",
+    description: "Complete MVP development for your startup idea",
     features: [
-      "Single platform (web or mobile)",
-      "Core functionality only",
-      "Basic UI/UX design",
+      "Web application development",
+      "Core functionality implementation",
+      "Responsive design",
+      "User authentication",
+      "Basic analytics integration",
       "2-4 weeks delivery",
       "1 round of revisions",
-      "Basic analytics integration",
-    ],
-    popular: false,
-    buttonText: "Get Started",
-  },
-  {
-    name: "Pro MVP",
-    price: "$12,000",
-    description: "Comprehensive solution for serious startups",
-    features: [
-      "Web + mobile responsive",
-      "Full feature implementation",
-      "Professional UI/UX design",
-      "4-8 weeks delivery",
-      "3 rounds of revisions",
-      "Advanced analytics",
-      "User authentication",
-      "Payment processing integration",
+      "Deployment setup",
     ],
     popular: true,
     buttonText: "Get Started",
   },
   {
-    name: "Enterprise MVP",
-    price: "Custom",
-    description: "Tailored solutions for complex projects",
+    name: "Maintenance Package",
+    price: "$1,500",
+    description: "30-day maintenance and support for your project",
     features: [
-      "Multi-platform solution",
-      "Custom feature development",
-      "Premium UI/UX design",
-      "Flexible timeline",
-      "Unlimited revisions",
-      "Advanced integrations",
-      "Dedicated project manager",
-      "Technical documentation",
-      "Post-launch support",
+      "Bug fixes & troubleshooting",
+      "Performance optimization",
+      "Feature enhancements",
+      "Technical support",
+      "Security updates",
+      "Analytics review",
+      "Code refactoring",
+      "Documentation updates",
     ],
     popular: false,
-    buttonText: "Contact Us",
+    buttonText: "Add Maintenance",
   },
 ];
 
@@ -63,12 +47,12 @@ const PricingSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Pricing Plans</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Transparent pricing to help you choose the perfect plan for your project.
-            All plans include our expertise and dedication to your success.
+            Simple and transparent pricing to help bring your project to life.
+            Choose the plan that works for your needs.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {pricingTiers.map((tier, index) => (
             <div 
               key={index} 
@@ -78,16 +62,16 @@ const PricingSection = () => {
             >
               {tier.popular && (
                 <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
-                  Most Popular
+                  One-Time Payment
                 </span>
               )}
               <div>
                 <h3 className="text-xl font-bold mb-2 text-foreground">{tier.name}</h3>
                 <div className="mb-4">
                   <span className="text-3xl font-bold text-foreground">{tier.price}</span>
-                  {tier.price !== "Custom" && (
-                    <span className="text-muted-foreground ml-1">/ project</span>
-                  )}
+                  <span className="text-muted-foreground ml-1">
+                    {index === 0 ? "/ project" : "/ 30 days"}
+                  </span>
                 </div>
                 <p className="text-muted-foreground mb-6">{tier.description}</p>
                 <div className="space-y-4 mb-8">
@@ -114,10 +98,10 @@ const PricingSection = () => {
 
         <div className="mt-12 text-center">
           <p className="text-muted-foreground mb-4">
-            Need a custom solution or have specific requirements?
+            Need more information about these plans?
           </p>
           <Button variant="outline" asChild>
-            <Link to="/contact">Contact Us for Custom Pricing</Link>
+            <Link to="/contact">Contact for Details</Link>
           </Button>
         </div>
       </div>

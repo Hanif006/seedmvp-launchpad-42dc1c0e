@@ -16,12 +16,12 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed w-full bg-white shadow-sm z-50">
+    <header className="fixed w-full bg-background/80 backdrop-blur-md z-50 border-b border-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center" onClick={closeMenu}>
-            <span className="text-2xl font-bold text-seedmvp-blue">
-              Seed<span className="text-seedmvp-accent">MVP</span>
+            <span className="text-2xl font-bold text-gradient">
+              Seed<span className="text-primary">MVP</span>
             </span>
           </Link>
 
@@ -32,8 +32,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `text-base font-medium ${
                   isActive
-                    ? "text-seedmvp-blue"
-                    : "text-gray-700 hover:text-seedmvp-blue transition-colors"
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary transition-colors"
                 }`
               }
             >
@@ -44,8 +44,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `text-base font-medium ${
                   isActive
-                    ? "text-seedmvp-blue"
-                    : "text-gray-700 hover:text-seedmvp-blue transition-colors"
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary transition-colors"
                 }`
               }
             >
@@ -56,8 +56,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `text-base font-medium ${
                   isActive
-                    ? "text-seedmvp-blue"
-                    : "text-gray-700 hover:text-seedmvp-blue transition-colors"
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary transition-colors"
                 }`
               }
             >
@@ -68,8 +68,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `text-base font-medium ${
                   isActive
-                    ? "text-seedmvp-blue"
-                    : "text-gray-700 hover:text-seedmvp-blue transition-colors"
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary transition-colors"
                 }`
               }
             >
@@ -87,7 +87,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               type="button"
-              className="text-gray-700 hover:text-seedmvp-blue focus:outline-none"
+              className="text-foreground hover:text-primary focus:outline-none"
               onClick={toggleMenu}
               aria-label="Toggle menu"
             >
@@ -103,15 +103,15 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white py-4 px-4 shadow-lg animate-fade-in">
+        <div className="md:hidden bg-background/95 py-4 px-4 border-t border-white/10 shadow-lg animate-fade-in">
           <nav className="flex flex-col space-y-4">
             <NavLink
               to="/"
               className={({ isActive }) =>
                 `text-base font-medium py-2 ${
                   isActive
-                    ? "text-seedmvp-blue"
-                    : "text-gray-700 hover:text-seedmvp-blue"
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary"
                 }`
               }
               onClick={closeMenu}
@@ -123,8 +123,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `text-base font-medium py-2 ${
                   isActive
-                    ? "text-seedmvp-blue"
-                    : "text-gray-700 hover:text-seedmvp-blue"
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary"
                 }`
               }
               onClick={closeMenu}
@@ -136,8 +136,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `text-base font-medium py-2 ${
                   isActive
-                    ? "text-seedmvp-blue"
-                    : "text-gray-700 hover:text-seedmvp-blue"
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary"
                 }`
               }
               onClick={closeMenu}
@@ -149,8 +149,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `text-base font-medium py-2 ${
                   isActive
-                    ? "text-seedmvp-blue"
-                    : "text-gray-700 hover:text-seedmvp-blue"
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary"
                 }`
               }
               onClick={closeMenu}

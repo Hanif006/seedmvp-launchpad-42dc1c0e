@@ -39,11 +39,11 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="section bg-seedmvp-gray-light">
+    <section className="section bg-background">
       <div className="container-tight">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Our Services</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We offer end-to-end solutions to take your idea from concept to launch and beyond.
           </p>
         </div>
@@ -52,19 +52,19 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              className="glass-card rounded-lg p-6 hover:bg-white/10 transition-colors"
             >
-              <div className="w-12 h-12 bg-seedmvp-blue/10 rounded-lg flex items-center justify-center mb-4">
-                <service.icon className="h-6 w-6 text-seedmvp-blue" />
+              <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                <service.icon className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-gray-600 mb-4">{service.description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-foreground">{service.title}</h3>
+              <p className="text-muted-foreground mb-4">{service.description}</p>
             </div>
           ))}
         </div>
 
         <div className="mt-12 text-center">
-          <Button asChild>
+          <Button asChild variant="secondary">
             <Link to="/services">Learn More About Our Services</Link>
           </Button>
         </div>

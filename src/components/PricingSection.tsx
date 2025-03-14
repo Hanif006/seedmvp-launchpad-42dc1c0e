@@ -58,11 +58,11 @@ const pricingTiers = [
 
 const PricingSection = () => {
   return (
-    <section className="section bg-seedmvp-gray-light">
+    <section className="section bg-background">
       <div className="container-tight">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing Plans</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Pricing Plans</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Transparent pricing to help you choose the perfect plan for your project.
             All plans include our expertise and dedication to your success.
           </p>
@@ -72,29 +72,29 @@ const PricingSection = () => {
           {pricingTiers.map((tier, index) => (
             <div 
               key={index} 
-              className={`bg-white rounded-xl shadow-md p-6 md:p-8 relative flex flex-col ${
-                tier.popular ? "border-2 border-seedmvp-blue ring-4 ring-seedmvp-blue/20" : ""
+              className={`glass-card rounded-xl p-6 md:p-8 relative flex flex-col ${
+                tier.popular ? "border-2 border-primary ring-4 ring-primary/20" : ""
               }`}
             >
               {tier.popular && (
-                <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-seedmvp-blue text-white px-4 py-1 rounded-full text-sm font-medium">
+                <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
                   Most Popular
                 </span>
               )}
               <div>
-                <h3 className="text-xl font-bold mb-2">{tier.name}</h3>
+                <h3 className="text-xl font-bold mb-2 text-foreground">{tier.name}</h3>
                 <div className="mb-4">
-                  <span className="text-3xl font-bold">{tier.price}</span>
+                  <span className="text-3xl font-bold text-foreground">{tier.price}</span>
                   {tier.price !== "Custom" && (
-                    <span className="text-gray-500 ml-1">/ project</span>
+                    <span className="text-muted-foreground ml-1">/ project</span>
                   )}
                 </div>
-                <p className="text-gray-600 mb-6">{tier.description}</p>
+                <p className="text-muted-foreground mb-6">{tier.description}</p>
                 <div className="space-y-4 mb-8">
                   {tier.features.map((feature, i) => (
                     <div key={i} className="flex items-start">
-                      <Check className="h-5 w-5 text-seedmvp-blue mr-2 mt-0.5 flex-shrink-0" />
-                      <span>{feature}</span>
+                      <Check className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                      <span className="text-foreground">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -113,7 +113,7 @@ const PricingSection = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-gray-600 mb-4">
+          <p className="text-muted-foreground mb-4">
             Need a custom solution or have specific requirements?
           </p>
           <Button variant="outline" asChild>

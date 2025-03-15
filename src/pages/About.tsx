@@ -45,7 +45,7 @@ const About = () => {
         <title>About - SeedMVP</title>
         <meta
           name="description"
-          content="Learn about Hanif Anuar, his mission, values, and experience in MVP development."
+          content="Learn about Mosquito Kalinz9o, his mission, values, and experience in MVP development."
         />
       </Helmet>
       <div className="pt-24">
@@ -70,7 +70,7 @@ const About = () => {
                 <h2 className="text-3xl font-bold mb-6 text-foreground">My Story</h2>
                 <div className="space-y-4 text-lg text-muted-foreground">
                   <p>
-                    Hi, I'm Hanif Anuar, a 16-year-old developer from Denmark. Despite my young age, I've developed a strong passion for creating digital solutions that solve real problems.
+                    Hi, I'm Mosquito Kalinz9o, a 16-year-old developer from Denmark. Despite my young age, I've developed a strong passion for creating digital solutions that solve real problems.
                   </p>
                   <p>
                     SeedMVP started as my personal mission to help entrepreneurs and startups turn their ideas into reality without the usual technical barriers and high development costs.
@@ -82,8 +82,8 @@ const About = () => {
               </div>
               <div>
                 <img 
-                  src="/lovable-uploads/ac0521fd-f6c5-464e-95af-e684d1fcd5cf.png" 
-                  alt="Hanif Anuar" 
+                  src="/lovable-uploads/fc72adba-dd45-40ea-b7b9-b7f430f209b2.png" 
+                  alt="Mosquito Kalinz9o" 
                   className="rounded-xl shadow-lg w-full"
                 />
               </div>

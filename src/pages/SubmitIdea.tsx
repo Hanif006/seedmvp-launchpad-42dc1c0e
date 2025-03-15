@@ -74,7 +74,7 @@ const SubmitIdea = () => {
         <title>Submit Your Idea - SeedMVP</title>
         <meta
           name="description"
-          content="Share your startup idea with Hanif Anuar and take the first step toward building your MVP."
+          content="Share your startup idea with Mosquito Kalinz9o and take the first step toward building your MVP."
         />
       </Helmet>
       <div className="pt-24">
@@ -98,15 +98,15 @@ const SubmitIdea = () => {
               <div className="flex flex-col md:flex-row gap-8 items-center text-left">
                 <div className="md:w-1/3">
                   <img 
-                    src="/lovable-uploads/ac0521fd-f6c5-464e-95af-e684d1fcd5cf.png" 
-                    alt="Hanif Anuar" 
+                    src="/lovable-uploads/fc72adba-dd45-40ea-b7b9-b7f430f209b2.png" 
+                    alt="Mosquito Kalinz9o" 
                     className="rounded-xl w-full max-w-xs mx-auto"
                   />
                 </div>
                 <div className="md:w-2/3">
                   <h2 className="text-2xl font-bold mb-4 text-gradient">Meet The Developer</h2>
                   <p className="text-white/90 text-lg mb-4">
-                    Hi, I'm <span className="font-bold text-primary">Hanif Anuar</span>, a 16-year-old developer from Denmark with a passion for building innovative digital solutions.
+                    Hi, I'm <span className="font-bold text-primary">Mosquito Kalinz9o</span>, a 16-year-old developer from Denmark with a passion for building innovative digital solutions.
                   </p>
                   <p className="text-white/80 mb-4">
                     Despite my young age, I bring a wealth of experience in web and mobile development, having worked on numerous projects that prioritize clean code, user experience, and business goals.

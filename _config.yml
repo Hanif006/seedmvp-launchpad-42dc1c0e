@@ -1,0 +1,22 @@
+
+# Jekyll configuration for GitHub Pages
+exclude: [
+  "node_modules",
+  "*.gemspec",
+  "*.gem",
+  "Gemfile",
+  "Gemfile.lock",
+  "package.json",
+  "package-lock.json",
+  "script",
+  "LICENSE.txt",
+  "lib",
+  "bin",
+  "README.md",
+  "Rakefile",
+  "src",
+  "dist"
+]
+
+# Use this to configure GitHub Pages
+include: ["_redirects"]

@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter, Sprout } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,7 +10,8 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
-            <Link to="/" className="flex items-center">
+            <Link to="/" className="flex items-center gap-1">
+              <Sprout className="h-5 w-5 text-primary" />
               <span className="text-2xl font-bold text-gradient">
                 Seed<span className="text-primary">MVP</span>
               </span>

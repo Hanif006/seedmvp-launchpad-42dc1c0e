@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sprout } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -19,7 +19,8 @@ const Navbar = () => {
     <header className="fixed w-full bg-background/80 backdrop-blur-md z-50 border-b border-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <Link to="/" className="flex items-center" onClick={closeMenu}>
+          <Link to="/" className="flex items-center gap-1" onClick={closeMenu}>
+            <Sprout className="h-6 w-6 text-primary" />
             <span className="text-2xl font-bold text-gradient">
               Seed<span className="text-primary">MVP</span>
             </span>
